@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<h2>CBS Rankings</h2>
+<body>
+    <div class="container-fluid">
+        <ol>
+            {% for player in players %}
+            <li>{{ player }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+</body>
+{% endblock %}

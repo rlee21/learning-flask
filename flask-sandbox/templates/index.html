@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<h2>News</h2>
+<body>
+    <div class="container-fluid">
+        {% for new in news %}
+        <li>{{new}}</li>
+        {% endfor %}
+    </div>
+</body>
+{% endblock %}
