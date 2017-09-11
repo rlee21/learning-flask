@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
+    <!-- Required meta tags -->
     <title>FF</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}"/>
     <style type="text/css">
-       body { background: WhiteSmoke; }
+       body { background: WhiteSmoke;
+       }
        a { padding: 25px }
     </style>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- bootstrap css -->
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
 </head>
 
      <!--navbar-->
     <nav class="navbar navbar-static-top navbar-inverse bg-inverse">
-        <a class="navbar-brand" href="/index">Home</a>
-        <a class="navbar-brand" href="/headlines">Headlines</a>
-        <a class="navbar-brand" href="/rankings">CBS Rankings</a>
+         <!--style="background-color: #000080;-->
+        <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+        <a class="navbar-brand" href="{{ url_for('headlines') }}">Headlines</a>
+        <a class="navbar-brand" href="{{ url_for('rankings') }}">Rankings</a>
     </nav>
 
 {% block body %}

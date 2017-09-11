@@ -33,10 +33,11 @@ def rankings():
     req_cbs = requests.get(url_cbs)
     soup_cbs = BeautifulSoup(req_cbs.content, "html.parser")
     cbs_raw = soup_cbs.find_all('span', {'class': 'player-name'})
-    players = []
-    for rank, player in enumerate(cbs_raw):
-        if rank < 150:
-            players.append(player.text)
+    # players = []
+    # for rank, player in enumerate(cbs_raw):
+    #     if rank < 150:
+    #         players.append(player.text)
+    players = [player.text for rank, player in enumerate(cbs_raw) if rank < 150]
     return render_template('cbs_rankings.html', players=players)
 
 
